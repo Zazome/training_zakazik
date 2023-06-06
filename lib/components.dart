@@ -26,28 +26,28 @@ Widget personDesign(
         backgroundColor: stableColor1,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(40.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Icon(
               Icons.account_circle_rounded,
-              size: 200,
+              size: 100,
               color: stableColor5,
             ),
             const SizedBox(
-              height: 40,
+              height: 5,
             ),
             Row(
               children: [
                 Icon(
                   Icons.person,
-                  size: 40,
+                  size: 20,
                   color: Colors.grey[400],
                 ),
                 const SizedBox(
-                  width: 30,
+                  width: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +59,7 @@ Widget personDesign(
                     Text(
                       '$name',
                       style: const TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.deepPurple,
                       ),
                     ),
@@ -74,11 +74,11 @@ Widget personDesign(
               children: [
                 Icon(
                   Icons.email,
-                  size: 40,
+                  size: 20,
                   color: Colors.grey[400],
                 ),
                 SizedBox(
-                  width: 30,
+                  width: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,7 +90,7 @@ Widget personDesign(
                     Text(
                       '$email',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.deepPurple,
                       ),
                     ),
@@ -105,11 +105,11 @@ Widget personDesign(
               children: [
                 Icon(
                   Icons.phone,
-                  size: 40,
+                  size: 20,
                   color: Colors.grey[400],
                 ),
                 const SizedBox(
-                  width: 30,
+                  width: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +121,7 @@ Widget personDesign(
                     Text(
                       '$phone',
                       style: const TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.deepPurple,
                       ),
                     ),
@@ -136,11 +136,11 @@ Widget personDesign(
               children: [
                 Icon(
                   Icons.assignment_ind_sharp,
-                  size: 40,
+                  size: 20,
                   color: Colors.grey[400],
                 ),
                 const SizedBox(
-                  width: 30,
+                  width: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,7 +152,7 @@ Widget personDesign(
                     Text(
                       '$type',
                       style: const TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.deepPurple,
                       ),
                     ),

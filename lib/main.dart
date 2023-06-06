@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:training_zakazik/bloc/states.dart';
 import 'package:training_zakazik/screens/login_screen.dart';
 import 'package:training_zakazik/screens/testscreen.dart';
 
@@ -14,15 +15,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: '',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(
+              create:(context)=>TrainCubit(),
+          ),
+        ],
+        child: BlocConsumer<TrainCubit,LoginStates>(
+          listener: (context,state){},
+          builder: (context,state){
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: '',
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+              ),
+              home:  MyHomePage(),
+            );
+          },
+          )
     );
+    
   }
 }
 
