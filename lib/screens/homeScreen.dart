@@ -13,40 +13,36 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // LoginModel service=LoginModel();
-    return BlocProvider(
-      create: (context) => TrainCubit(),
-      child: BlocBuilder<TrainCubit, LoginStates>(
-        builder: (context, state) {
+    return BlocBuilder<TrainCubit, LoginStates>(
+      builder: (context, state) {
+        if (kDebugMode) {
+          print(state);
+        }
+        if (state is LoginInitState) {
+          return const Center(
+            child:  CircularProgressIndicator(),
+          );
+        } else if (state is LoginSuccessState) {
+          var data = state.data;
+          return personDesign(
+              name: data.name,
+              email: data.email,
+              phone: data.phone,
+              type: data.userType,
+          );
+        }else if (state is LoginFailedState) {
           if (kDebugMode) {
             print(state);
           }
-          if (state is LoginInitState) {
-            TrainCubit.get(context).getData(email: email);
-            return const Center(
-              child:  CircularProgressIndicator(),
-            );
-          } else if (state is LoginSuccessState) {
-            var data = state.data;
-            return personDesign(
-                name: data.name,
-                email: data.email,
-                phone: data.phone,
-                type: data.userType,
-            );
-          }else if (state is LoginFailedState) {
-            if (kDebugMode) {
-              print(state);
-            }
-            var data = state.data;
-            return failedDesign(message: data);
-          }
-          else {
-            return const Center(
-              child: Text('NoOoOoOoOoOo'),
-            );
-          }
-        },
-      ),
+          var data = state.data;
+          return failedDesign(message: data);
+        }
+        else {
+          return const Center(
+            child: Text('NoOoOoOoOoOo'),
+          );
+        }
+      },
     );
   }
 }
